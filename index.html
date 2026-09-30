@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GCSE Latin Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <h1>GCSE Latin Practice</h1>
+      <p class="lead">What would you like to practise?</p>
+      <div class="choices">
+        <button class="choice" data-mode="nouns">
+          <span class="choice-title">Nouns</span>
+          <span class="choice-sub">Decline a noun in all five cases</span>
+        </button>
+        <button class="choice" data-mode="verbs">
+          <span class="choice-title">Verbs</span>
+          <span class="choice-sub">Conjugate a verb in the present tense</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section id="practice" hidden>
+      <div class="topbar">
+        <button id="back" class="link">&larr; Back</button>
+        <span id="tally"></span>
+      </div>
+
+      <div class="word-card">
+        <div id="word-latin" class="word-latin"></div>
+        <div id="word-english" class="word-english"></div>
+        <div id="word-info" class="word-info"></div>
+      </div>
+
+      <p id="instruction" class="instruction"></p>
+
+      <form id="answers" autocomplete="off">
+        <table id="grid"></table>
+        <div id="result" class="result" hidden></div>
+        <div class="actions">
+          <button type="submit" id="check" class="primary">Check answers</button>
+          <button type="button" id="retry" hidden>Try again</button>
+          <button type="button" id="next" class="primary" hidden>Next word &rarr;</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="vocab.js"></script>
+  <script src="latin.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
