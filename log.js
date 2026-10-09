@@ -7,7 +7,7 @@
    sent anywhere.
    ===================================================================== */
 
-const LOG_URL = "";
+const LOG_URL = "https://script.google.com/macros/s/AKfycbykZORNABu2vPgUmH88O7rj8iN2wFD4TwZLjJsVCPz6NJ26lw81drhlBS8cNaG5ls-S/exec";
 
 /* activity: "Nouns", "Verbs", "Sentences", "Passage translation", "Passage grammar"
    prompt:   what the student was shown
