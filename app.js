@@ -13,8 +13,10 @@ const state = {
 
 /* ---------- navigation ---------- */
 
-document.querySelectorAll(".choice").forEach(btn =>
+document.querySelectorAll(".choice[data-mode]").forEach(btn =>
   btn.addEventListener("click", () => startMode(btn.dataset.mode)));
+
+$("log-notice").hidden = !LOG_URL;
 
 $("back").addEventListener("click", () => {
   $("practice").hidden = true;
@@ -160,6 +162,11 @@ function check() {
   }
 
   const total = state.order.length;
+  logAnswer(
+    state.mode === "nouns" ? "Nouns" : "Verbs",
+    $("word-latin").textContent + (state.retrying ? " (retry)" : ""),
+    state.order.map(k => $(`in-${k}`).value.trim() || "–").join(", "),
+    state.order.map(k => state.answers[k][0]).join(", "));
   if (!state.retrying) {
     state.done++;
     if (right === total) state.perfect++;

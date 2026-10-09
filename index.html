@@ -21,7 +21,17 @@
           <span class="choice-title">Verbs</span>
           <span class="choice-sub">Conjugate a verb in the present tense</span>
         </button>
+        <button class="choice" data-activity="sentences">
+          <span class="choice-title">Sentences</span>
+          <span class="choice-sub">Translate sentences practising the cases</span>
+        </button>
+        <button class="choice" data-activity="passage">
+          <span class="choice-title">Passage</span>
+          <span class="choice-sub">Translate a story, then answer grammar questions</span>
+        </button>
       </div>
+
+      <p id="log-notice" class="log-notice" hidden>Your answers are saved so your teacher can see them.</p>
     </section>
 
     <!-- Practice -->
@@ -49,10 +59,60 @@
         </div>
       </form>
     </section>
+
+    <!-- Sentence and passage translation -->
+    <section id="study" hidden>
+      <div class="topbar">
+        <button id="study-back" class="link">&larr; Back</button>
+        <span id="study-progress"></span>
+      </div>
+
+      <h2 id="study-heading" class="study-heading"></h2>
+      <p id="study-note" class="instruction"></p>
+
+      <div id="study-passage" class="passage latin-text" hidden></div>
+
+      <div id="study-card" class="word-card study-card">
+        <div id="study-label" class="study-label"></div>
+        <div id="study-prompt" class="study-prompt"></div>
+      </div>
+
+      <details id="study-vocab" class="vocab" hidden>
+        <summary>Vocabulary help</summary>
+        <dl id="study-vocab-list"></dl>
+      </details>
+
+      <form id="study-form" autocomplete="off">
+        <textarea id="study-input" rows="3" spellcheck="false" aria-label="Your answer"></textarea>
+        <p class="hint">Press <kbd>Enter</kbd> to <span id="study-hint">see the answer</span>.</p>
+
+        <div id="study-reveal" class="reveal" hidden>
+          <div class="reveal-label">Answer</div>
+          <div id="study-answer" class="reveal-text"></div>
+          <div class="reveal-hint">Compare it with yours &mdash; you decide whether you got it right.</div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="study-show" class="primary">Show answer</button>
+          <button type="button" id="study-next" class="primary" hidden>Next &rarr;</button>
+        </div>
+      </form>
+
+      <div id="study-finished" class="finished" hidden>
+        <p id="study-finished-text"></p>
+        <div class="actions">
+          <button type="button" id="study-home">Home</button>
+          <button type="button" id="study-again" class="primary">Start again</button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="vocab.js"></script>
+  <script src="content.js"></script>
+  <script src="log.js"></script>
   <script src="latin.js"></script>
   <script src="app.js"></script>
+  <script src="translate.js"></script>
 </body>
 </html>
